@@ -1,0 +1,118 @@
+h1{ 
+    text-align: center;
+    font-style: italic;
+}
+
+p{
+    text-align: center;
+    font-style: italic;
+}
+
+.wip {  
+    text-align: center;
+    font-style: italic;
+    color: rgb(255, 0, 0);
+} 
+
+/* center container for buttons */
+.button-row {
+    text-align: center;
+    margin: 0.6rem 0;
+}
+
+.rsvp {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;   /* smaller */
+    font-style: italic;
+    font-size: 0.95rem;
+    color: rgb(77, 77, 77);
+    background: transparent;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    margin-right: 0.5rem;
+}
+
+/* Slack button */
+.slack-btn {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    margin-left: 0.4rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: #4A154B; /* Slack purple */
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 4px;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* small image button style */
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 6px;
+    cursor: pointer;
+}
+.icon-btn img {
+    max-width: 24px;
+    max-height: 24px;
+}
+
+/* make the photos sit side-by-side, smaller */
+.img, .img2, .img3 {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0.6rem;
+    max-width: 25%;   /* smaller so they sit side-by-side */
+    height: auto;
+}
+
+/* stack on small screens */
+@media (max-width: 600px) {
+    .img, .img2, .img3 {
+        display: block;
+        max-width: 90%;
+        margin: 0.6rem auto;
+    }
+
+    /* make buttons a bit larger on small screens for touch */
+    .icon-btn { width: 44px; height: 44px; }
+    .icon-btn img { max-width: 28px; }
+}
+
+/* FAQ styles */
+#faq {
+    max-width: 800px;
+    margin: 1.2rem auto;
+    padding: 0 1rem;
+}
+#faq h2 {
+    text-align: center;
+    font-style: italic;
+}
+#faq dl dt {
+    font-weight: 700;
+    margin-top: 0.8rem;
+}
+#faq dl dd {
+    margin: 0 0 0.6rem 0;
+}
+
+p2 {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
