@@ -1,6 +1,6 @@
 /* Cleaned / restored CSS */
 :root{
-  --hero-bg: #B43E3E;
+  background-image: url("night_stars_lights.jpg");
   --accent: #041104;
   --slack: #4A154B;
   --text-dark: #111;
@@ -20,7 +20,16 @@ body {
 
 /* HERO / first section */
 .hero {
-    background-color: var(--hero-bg);
+    /* hero uses the night_stars_lights image as its background */
+    background-image:
+      linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+      url("/night_stars_lights.jpg");
+    background-repeat: no-repeat;
+    /* emphasize the lower part of the photo (x y) — x: right, y: 75% from top */
+    background-position: right 75%;
+    background-size: cover;      /* fill area, crop top more so bottom is visible */
+    background-attachment: scroll;
+    background-color: var(--hero-bg); /* fallback color */
     color: #fff;
     min-height: 100vh;
     padding: 2rem 1rem;
@@ -29,6 +38,7 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
+    margin-top: 100px; /* moves the whole hero section down a bit */
 }
 
 /* requested global h1 (kept), but ensure hero h1 stays white for contrast */
@@ -57,7 +67,7 @@ p {
 
 /* links */
 .bornhack {
-    color: rgb(20, 8, 8);
+    color: #cec9c9;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -65,7 +75,7 @@ p {
 /* buttons */
 button {
     display: block;
-    margin: 20px auto;
+    margin: 40  px auto;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #041104;
@@ -77,34 +87,37 @@ button {
 
 /* anchor styled buttons */
 .button, .button2 {
-    color: white;
+    color: rgb(33, 112, 26);
     text-decoration: none;
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #041104;
+    padding: 20px 35px;
+    background-color: #152e15;
     border-radius: 5px;
+    font-style: italic;
+    font-size: larger;
 }
 
 /* small undertext */
 .undertext {
     text-align: center;
     font-size: 15px;
-    color: rgb(12, 3, 3);
+    color: #cec9c9;
     font-style: italic;
 }
 
 /* other link styles */
 .hackclub {
-    color: rgb(20, 8, 8);
+    color: #cec9c9;
     font-weight: bold;
     text-decoration: underline;
     font-style: italic;
 }
 
 .slack {
-    color: rgb(20, 8, 8);
+    color: #cec9c9;
     font-weight: bold;
     font-style: italic;
+    font-size: small;
 }
 
 /* details page */
@@ -168,7 +181,7 @@ button {
 
 p{
     text-align: center;
-    color: #111;
+    color: #cec9c9;
 }
 
 .faq{
@@ -179,6 +192,12 @@ p{
 
 .footer{
     text-align: center;
-    color: gray;
+    color: #cec9c9;
     font-style: italic;
+}
+
+p2{
+    color: #cec9c9;
+    font-style: italic;
+    font-size: 18px;
 }
