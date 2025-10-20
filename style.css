@@ -1,6 +1,7 @@
 /* Cleaned / restored CSS */
 :root{
-  background-image: url("night_stars_lights.jpg");
+  /* remove background-image from :root */
+  --hero-bg: #B43E3E;
   --accent: #041104;
   --slack: #4A154B;
   --text-dark: #111;
@@ -16,20 +17,19 @@ body {
     scroll-behavior: smooth;
     /* uncomment if you want snapping */
     scroll-snap-type: y mandatory;
+    background-color: var(--hero-bg); /* ensure top area matches hero */
 }
 
 /* HERO / first section */
 .hero {
-    /* hero uses the night_stars_lights image as its background */
     background-image:
       linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-      url("/night_stars_lights.jpg");
+      url("night_stars_lights.jpg"); /* use relative path (no leading /) */
     background-repeat: no-repeat;
-    /* emphasize the lower part of the photo (x y) — x: right, y: 75% from top */
-    background-position: right 75%;
-    background-size: cover;      /* fill area, crop top more so bottom is visible */
+    background-position: center 75%;   /* show lower part of image */
+    background-size: cover;
     background-attachment: scroll;
-    background-color: var(--hero-bg); /* fallback color */
+    background-color: var(--hero-bg);
     color: #fff;
     min-height: 100vh;
     padding: 2rem 1rem;
@@ -38,7 +38,8 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    margin-top: 100px; /* moves the whole hero section down a bit */
+    margin-top: 0;       /* remove margin that showed the page background */
+    padding-top: 100px;  /* move content down without exposing background */
 }
 
 /* requested global h1 (kept), but ensure hero h1 stays white for contrast */
