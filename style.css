@@ -176,3 +176,9 @@ p{
     color: #111;
     font-style: italic;
 }
+
+.footer{
+    text-align: center;
+    color: gray;
+    font-style: italic;
+}
