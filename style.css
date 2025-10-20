@@ -14,22 +14,23 @@ body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: var(--text-dark);
     scroll-behavior: smooth;
-    /* uncomment if you want snapping */
     scroll-snap-type: y mandatory;
-    background-color: var(--hero-bg); /* ensure top area matches hero */
+
+    /* keep a matching fallback color so no white bar shows */
+    background-color: var(--hero-bg);
 }
 
-/* HERO / first section */
+/* HERO / first section — show more of the bottom of the photo */
 .hero {
     background-image:
       linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-      url("night_stars_lights.jpg"); /* use relative path (no leading /) */
+      url("night_stars_lights.jpg"); /* relative path, case-sensitive */
     background-repeat: no-repeat;
-    /* show more of the bottom of the photo (x y): horizontal = right, vertical = 75% */
+    /* x y: anchor to the right and bias vertically toward the bottom */
     background-position: right 75%;
-    background-size: cover;        /* crop the top so bottom appears more */
+    background-size: cover;        /* fills area, crops top so bottom is visible */
     background-attachment: scroll;
-    background-color: var(--hero-bg); /* fallback color */
+    background-color: var(--hero-bg); /* fallback */
     color: #fff;
     min-height: 100vh;
     padding: 2rem 1rem;
@@ -38,16 +39,16 @@ body {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start;
-    margin-top: 0;
-    padding-top: 60px; /* nudges content down without exposing white */
+    margin-top: 0;    /* ensure no page gap shows through */
+    padding-top: 48px; /* small inward nudge so content isn't flush with top */
 }
 
-/* tweak for small screens to keep the important lower area visible */
+/* small screens: nudge the focus further down so bottom remains visible */
 @media (max-width: 600px) {
     .hero {
         background-position: right 85%;
         background-size: cover;
-        padding-top: 40px;
+        padding-top: 28px;
     }
 }
 
