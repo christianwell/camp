@@ -101,9 +101,9 @@ button {
     color: rgb(33, 112, 26);
     text-decoration: none;
     display: inline-block;
-    padding: 20px 35px;
+    padding: 20px 25px;
     background-color: #275527;
-    border-radius: 5px;
+    border-radius: 1px;
     font-style: italic;
     font-size: larger;
 }
@@ -211,4 +211,26 @@ p2{
     color: #cec9c9;
     font-style: italic;
     font-size: 18px;
+}
+
+/* center the button row and ensure .button2 is horizontally centered */
+.button-row {
+  display: flex;
+  flex-direction: column; /* stacks undertext above the button */
+  align-items: center;    /* centers children horizontally */
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+/* ensure .button2 has no stray margins and stays centered */
+.button2 {
+  margin: 0;              /* reset any inherited margins */
+  display: inline-block;
+}
+
+/* small-screen tweaks */
+@media (max-width: 600px) {
+  .button-row { gap: 0.4rem; }
+  .button2 { padding: 8px 12px; }
 }
