@@ -1,6 +1,6 @@
 /* Cleaned / restored CSS */
 :root{
-  --hero-bg: #B43E3E; /* added so body fallback works */
+  --hero-bg: #fff; /* added so body fallback works */
   --accent: #041104;
   --slack: #4A154B;
   --text-dark: #111;
@@ -33,6 +33,7 @@ body {
     background-color: var(--hero-bg); /* fallback */
     color: #fff;
     min-height: 100vh;
+    position: relative; /* contain absolutely-positioned top-right button */
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
@@ -78,7 +79,7 @@ p {
 
 /* links */
 .bornhack {
-    color: #cec9c9;
+    color: #fff;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -92,40 +93,49 @@ button {
     background-color: #041104;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
 }
 
 /* anchor styled buttons */
-.button, .button2 {
-    color: rgb(33, 112, 26);
+.button1, .button2 {
+    color: rgb(193, 255, 187);
+    border: 5px solid rgb(193, 255, 187);
     text-decoration: none;
     display: inline-block;
     padding: 20px 25px;
     background-color: #275527;
-    border-radius: 1px;
+    border-radius: 30px;
     font-style: italic;
     font-size: larger;
+    margin: 0;              /* reset any inherited margins */
+}
+
+.button1:hover, .button2:hover {
+    background-color: #193b1a;
+    color: rgb(200, 255, 194);
+    transform: scale(1.05);
 }
 
 /* small undertext */
 .undertext {
     text-align: center;
     font-size: 15px;
-    color: #cec9c9;
+    color: #fff;
     font-style: italic;
 }
 
 /* other link styles */
 .hackclub {
-    color: #cec9c9;
+    color: #fff;
     font-weight: bold;
     text-decoration: underline;
     font-style: italic;
+    cursor: pointer !important;
 }
 
 .slack {
-    color: #cec9c9;
+    color: #fff;
     font-weight: bold;
     font-style: italic;
     font-size: small;
@@ -192,7 +202,7 @@ button {
 
 p{
     text-align: center;
-    color: #cec9c9;
+    color: #fff;
 }
 
 .faq{
@@ -203,12 +213,12 @@ p{
 
 .footer{
     text-align: center;
-    color: #cec9c9;
+    color: #fff;
     font-style: italic;
 }
 
 p2{
-    color: #cec9c9;
+    color: #fff;
     font-style: italic;
     font-size: 18px;
 }
@@ -223,14 +233,75 @@ p2{
   text-align: center;
 }
 
-/* ensure .button2 has no stray margins and stays centered */
-.button2 {
-  margin: 0;              /* reset any inherited margins */
-  display: inline-block;
+/* top-right positioned variant for quick access */
+.top-button {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 20; /* keep it above background imagery */
+}
+
+@media (max-width: 600px) {
+    .top-button {
+        top: 12px;
+        right: 12px;
+        padding: 8px 12px; /* reduce size on smaller screens */
+    }
 }
 
 /* small-screen tweaks */
 @media (max-width: 600px) {
   .button-row { gap: 0.4rem; }
   .button2 { padding: 8px 12px; }
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal.open { display: flex; }
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+.modal-content {
+    position: relative;
+    background: #fff;
+    color: #111;
+    width: min(1000px, calc(100% - 3rem));
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: rgb(193, 255, 187) solid;
+    border-width: 5px;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.details-images {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    justify-content: center;
+}
+.details-images img { max-width: 180px; height: auto; border-radius: 6px; }
+
+@media (max-width: 600px) {
+    .modal-content { padding: 1rem; }
+    .details-images img { max-width: 120px; }
 }
