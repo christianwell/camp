@@ -150,10 +150,19 @@
   padding:3rem 2rem;
 }
 
+/* Ensure the camp image is centered and scales responsively */
+.camp-image{
+  display:block;
+  margin:0 auto 1.25rem;
+  max-width:320px;
+  width:100%;
+  height:auto;
+}
+
 @media(max-width:600px){
-  .camp-image{max-width:60%}
   .button,.button2,button{padding:8px 12px;font-size:15px}
   .details-inner{padding:0 1rem}
+  .camp-image{max-width:60%;}
 }
 
 .faq{
