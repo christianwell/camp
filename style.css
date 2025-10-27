@@ -83,7 +83,7 @@ p {
     text-decoration: underline;
 }
 
-/* buttons */
+/*  2s */
 button {
     display: block;
     margin: 40px auto; /* fixed from "40  px" */
@@ -98,11 +98,11 @@ button {
 
 /* anchor styled buttons */
 .button, .button2 {
-    color: rgb(33, 112, 26);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     display: inline-block;
     padding: 20px 25px;
-    background-color: #275527;
+    background-color: #10f510;
     border-radius: 1px;
     font-style: italic;
     font-size: larger;
