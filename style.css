@@ -57,11 +57,27 @@ h1 {
     text-align: center;
     font-style: italic;
     color: rgb(43, 5, 5);
-    margin: 30px;
+        margin: 30px;
     font-size: 3rem;
 }
 .hero h1 {
     color: #fff;
+}
+
+/* tighten vertical spacing inside the hero so elements sit closer together */
+.hero h1 {
+    margin: 0 0 0.45rem; /* less space below the main heading */
+}
+.hero p {
+    margin: 0 0 0.45rem; /* smaller paragraph spacing inside hero */
+}
+.hero p2 {
+    display: block;
+    margin: 0 0 0.6rem; /* small gap before the button row */
+}
+.hero .button-row {
+    gap: 0.35rem; /* tighten undertext -> button distance */
+    margin-top: 0.25rem; /* gentle lift of the whole row */
 }
 
 .camp-image {
@@ -96,16 +112,50 @@ button {
     cursor: pointer;
 }
 
-/* anchor styled buttons */
+/* anchor styled buttons (primary) */
 .button, .button2 {
-    color: rgb(0, 0, 0);
     text-decoration: none;
     display: inline-block;
-    padding: 20px 25px;
-    background-color: #10f510;
-    border-radius: 1px;
+    padding: 12px 22px;
+    background: rgba(255,255,255,0.12); /* subtle translucent button on hero */
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 999px; /* pill */
     font-style: italic;
-    font-size: larger;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, opacity 150ms ease;
+    cursor: pointer;
+}
+
+.button2:hover, .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+    background: rgba(255,255,255,0.18);
+    text-decoration: none;
+}
+
+.button2:active, .button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    background: rgba(255,255,255,0.10);
+}
+
+.button2:focus, .button:focus {
+    outline: 3px solid rgba(255,255,255,0.18);
+    outline-offset: 3px;
+    border-color: rgba(255,255,255,0.6);
+}
+
+/* on the white details page, use a solid accent button so it reads well */
+.details-page .button, .details-page .button2 {
+    background: #0d3e0d;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    border-radius: 8px;
 }
 
 /* small undertext */
