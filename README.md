@@ -6,6 +6,9 @@
 
 Rooted is a work-in-progress YSWS (You Ship, We Ship) event sponsored by Hack Club, taking place at BornHack 2026.
 
+> [!NOTE]
+> Rooted is unfortunatly not going to happen this year!
+
 ## Features
 
 - 🔥 Dynamic firefly animations based on RSVP count
